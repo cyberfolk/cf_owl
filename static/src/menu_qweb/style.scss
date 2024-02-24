@@ -1,0 +1,72 @@
+#body{
+    padding: 1rem;
+}
+
+._props  {
+  @extend .text-secondary;
+}
+
+._value  {
+  @extend .text-success;
+}
+
+._focus  {
+  @extend .bg-danger;
+  @extend .text-white;
+}
+
+
+.box-code{
+    @extend .fw-bolder;
+    @extend .text-warning;
+    font-family: monospace;
+    font-size: 0;
+    width: max-content;
+//     margin: auto;
+    background: #DDD;
+    padding: 0px 1rem;
+    margin: 2px 0;
+    border-radius: 0.5rem;
+    }
+
+.box-code span{
+    font-size: initial;
+}
+
+.rendered-as{
+    @extend .fw-bolder;
+    @extend .ms-5;
+    @extend .my-1;
+}
+
+.rendered-as{
+    margin: 0 !important;
+    padding: 0 1rem;
+}
+
+.rendered-as::after{
+    content: " → Rendered as → ";
+}
+
+.badge-primary {
+    background-color: #DDD;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+
+.badge-pill {
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+    border-radius: 10rem;
+}
+
+

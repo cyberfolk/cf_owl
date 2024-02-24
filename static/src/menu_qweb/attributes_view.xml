@@ -1,0 +1,511 @@
+<t t-name="AttributesView">
+    <div id="body">
+        <h1>Attributes</h1>
+
+        <!-- OUTPUT - T-OUT better than T-ESC -->
+        <div class="mt-5">
+            <h2>
+                <span>Output:</span>
+                <span class="badge badge-pill badge-primary">t-out >> t-esc</span>
+            </h2>
+            <p>
+                <strong>t-out</strong> e <strong>t-esc</strong> sono modi per visualizzare
+                variabili e template. Ma tra i due è preferibile usare <strong>t-out</strong>.
+            </p>
+
+        </div>
+
+        <!-- ATTRIBUTE - T-ATT-$NAME -->
+        <div class="mt-5">
+            <h2>
+                <span>Attribute:</span>
+                <span class="badge badge-pill badge-primary">t-att-$name</span>
+            </h2>
+            <p>
+                An attribute called $name is created,
+                the attribute value is evaluated and
+                the result is set as the attribute’s value:
+            </p>
+            <table class="table table-bordered table-hover table-striped align-middle">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">WIDTH - NOT SPECIFIED</th>
+                        <th scope="col">WIDTH - FISSA</th>
+                        <th scope="col">WIDTH - T-ATT FISSA</th>
+                        <th scope="col">WIDTH - T-ATT DINAMICA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Result</th>
+                        <td>
+                            <img src="https://picsum.photos/100"/>
+                        </td>
+                        <td>
+                            <img src="https://picsum.photos/100" width="110"/>
+                        </td>
+                        <td>
+                            <img src="https://picsum.photos/100" t-att-width="120"/>
+                        </td>
+                        <td>
+                            <t t-set="width" t-value="130"/>
+                            <img src="https://picsum.photos/100" t-att-width="width"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Code</th>
+                        <td>
+                            <div class="box-code">
+                                <span>&lt;</span>
+                                <span>img</span>
+                                <span class="_props">&#160;src</span>
+                                <span class="_value">="..."</span>
+                                <span>/</span>
+                                <span>&gt;</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="box-code">
+                                <span>&lt;</span>
+                                <span>img</span>
+                                <span class="_props">&#160;src</span>
+                                <span class="_value">="..."</span>
+                                <span class="_props">&#160;width</span>
+                                <span class="_value">="110"</span>
+                                <span>/</span>
+                                <span>&gt;</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="box-code">
+                                <span>&lt;</span>
+                                <span>img</span>
+                                <span class="_props">&#160;src</span>
+                                <span class="_value">="..."</span>
+                                <span class="_props">&#160;t-att-width</span>
+                                <span class="_value">="120"</span>
+                                <span>/</span>
+                                <span>&gt;</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="box-code">
+                                <span>&lt;</span>
+                                <span>t</span>
+                                <span class="_props">&#160;t-set</span>
+                                <span class="_value">="width"</span>
+                                <span class="_props">&#160;t-valu</span>
+                                <span class="_value">="130"</span>
+                                <span>/</span>
+                                <span>&gt;</span>
+                            </div>
+                            <div class="box-code">
+                                <span>&lt;</span>
+                                <span>img</span>
+                                <span class="_props">&#160;src</span>
+                                <span class="_value">="..."</span>
+                                <span class="_props">&#160;t-att-width</span>
+                                <span class="_value">="width"</span>
+                                <span>/</span>
+                                <span>&gt;</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Redered as</th>
+                        <td>Same</td>
+                        <td>Same</td>
+                        <td>
+                            <div class="box-code">
+                                <span>&lt;</span>
+                                <span>img</span>
+                                <span class="_props">&#160;src</span>
+                                <span class="_value">="..."</span>
+                                <span class="_props">&#160;width</span>
+                                <span class="_value">="120"</span>
+                                <span>/</span>
+                                <span>&gt;</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="box-code">
+                                <span>&lt;</span>
+                                <span>img</span>
+                                <span class="_props">&#160;src</span>
+                                <span class="_value">="..."</span>
+                                <span class="_props">&#160;width</span>
+                                <span class="_value">="130"</span>
+                                <span>/</span>
+                                <span>&gt;</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ATTRIBUTE - T-ATTF-$NAME -->
+        <div class="mt-5">
+            <h2>
+                <span>Attribute:</span>
+                <span class="badge badge-pill badge-primary">t-att<span class="text-danger">f</span>-$name
+                </span>
+            </h2>
+            <p>
+                Same as previous, but the parameter is a format string instead of just an expression,
+                often useful to mix literal and non-literal string (e.g. classes).
+                Generally used for class-binding.
+            </p>
+            <t t-set="list" t-value="['UNO', 'DUE', 'TRE', 'BEH', 'MEH']"/>
+            <table class="table table-bordered table-hover table-striped align-middle">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" style="width: 50%;">Code</th>
+                        <th scope="col">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">T-ATTF-CLASS</th>
+                        <td>
+                            <div class="box-code">
+                                <div>
+                                    <span>&lt;</span>
+                                    <span>t</span>
+                                    <span class="_props">&#160;t-foreach</span>
+                                    <span class="_value">="list"</span>
+                                    <span class="_props">&#160;t-as</span>
+                                    <span class="_value">="i"</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div class="ms-3">
+                                    <span>&lt;</span>
+                                    <span>li</span>
+                                    <span class="_props">&#160;t-out</span>
+                                    <span class="_value">="i"</span>
+                                    <span class="_props">&#160;t-attf-class</span>
+                                    <span class="_value">="badge badge-pill&#160;</span>
+                                    <span class="_focus">{</span>
+                                    <span class="_value">{ (i_index % 2 === 0) ? 'bg-info' : 'bg-warning' }</span>
+                                    <span class="_focus">}</span>
+                                    <span class="_value">"</span>
+                                    <span>/</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div>
+                                    <span>&lt;</span>
+                                    <span>t</span>
+                                    <span>/</span>
+                                    <span>&gt;</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="result">
+                            <t t-foreach="list" t-as="i">
+                                <span t-out="i" t-attf-class="badge badge-pill {{ (i_index % 2 === 0) ? 'bg-info' : 'bg-warning' }}"/>
+                            </t>
+                            <div>Syntaxes for format strings: {{code}} (aka jinja-style)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">T-ATTF-CLASS</th>
+                        <td>
+                            <div class="box-code">
+                                <div>
+                                    <span>&lt;</span>
+                                    <span>t</span>
+                                    <span class="_props">&#160;t-foreach</span>
+                                    <span class="_value">="list"</span>
+                                    <span class="_props">&#160;t-as</span>
+                                    <span class="_value">="i"</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div class="ms-3">
+                                    <span>&lt;</span>
+                                    <span>li</span>
+                                    <span class="_props">&#160;t-out</span>
+                                    <span class="_value">="i"</span>
+                                    <span class="_props">&#160;t-attf-class</span>
+                                    <span class="_value">="badge badge-pill&#160;</span>
+                                    <span class="_focus">#</span>
+                                    <span class="_value">{ (i_index % 2 === 0) ? 'bg-info' : 'bg-warning' }</span>
+                                    <span class="_value">"</span>
+                                    <span>/</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div>
+                                    <span>&lt;</span>
+                                    <span>t</span>
+                                    <span>/</span>
+                                    <span>&gt;</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="result">
+                            <t t-foreach="list" t-as="i">
+                                <span t-out="i" t-attf-class="badge badge-pill #{ (i_index % 2 === 0) ? 'bg-info' : 'bg-warning' }"/>
+                            </t>
+                            <div>Syntaxes for format strings: {{code}} (aka ruby-style)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">T-ATT-CLASS</th>
+                        <td>
+                            <div class="box-code">
+                                <div>
+                                    <span>&lt;</span>
+                                    <span>t</span>
+                                    <span class="_props">&#160;t-foreach</span>
+                                    <span class="_value">="list"</span>
+                                    <span class="_props">&#160;t-as</span>
+                                    <span class="_value">="i"</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div class="ms-3">
+                                    <span>&lt;</span>
+                                    <span>li</span>
+                                    <span class="_props">&#160;t-out</span>
+                                    <span class="_value">="i"</span>
+                                    <span class="_props">&#160;t-att-class</span>
+                                    <span class="_value">="</span>
+                                    <span class="_focus">'</span>
+                                    <span class="_value">badge badge-pill</span>
+                                    <span class="_focus">&#160;' + (</span>
+                                    <span class="_value">(i_index % 2 === 0) ? 'bg-info' : 'bg-warning'</span>
+                                    <span class="_focus">)</span>
+                                    <span class="_value">"</span>
+                                    <span>/</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div>
+                                    <span>&lt;</span>
+                                    <span>t</span>
+                                    <span>/</span>
+                                    <span>&gt;</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="result">
+                            <t t-foreach="list" t-as="i">
+                                <span t-out="i" t-att-class="'badge badge-pill ' + ((i_index % 2 === 0) ? 'bg-info' : 'bg-warning')"/>
+                            </t>
+                            <div>Per applicare una classe tramite "T-ATT-", non possoutilizzare delle stringhe ma devo usare delle variabili che ritornano delle stringhe</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">RENDERIZZATO</th>
+                        <td>
+                            <div class="box-code">
+                                <div class="ms-3">
+                                    <span>&lt;</span>
+                                    <span>li</span>
+                                    <span class="_props">&#160;class</span>
+                                    <span class="_value">="badge badge-pill bg-info"</span>
+                                    <span>&gt;</span>
+                                    <span class="_props">UNO,</span>
+                                    <span>&lt;</span>
+                                    <span>/li</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div class="ms-3">
+                                    <span>&lt;</span>
+                                    <span>li</span>
+                                    <span class="_props">&#160;class</span>
+                                    <span class="_value">="badge badge-pill bg-warning"</span>
+                                    <span>&gt;</span>
+                                    <span class="_props">DUE,</span>
+                                    <span>&lt;</span>
+                                    <span>/li</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div class="ms-3">
+                                    <span>&lt;</span>
+                                    <span>li</span>
+                                    <span class="_props">&#160;class</span>
+                                    <span class="_value">="badge badge-pill bg-info"</span>
+                                    <span>&gt;</span>
+                                    <span class="_props">TRE,</span>
+                                    <span>&lt;</span>
+                                    <span>/li</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div class="ms-3">
+                                    <span>&lt;</span>
+                                    <span>li</span>
+                                    <span class="_props">&#160;class</span>
+                                    <span class="_value">="badge badge-pill bg-warning"</span>
+                                    <span>&gt;</span>
+                                    <span class="_props">BEH,</span>
+                                    <span>&lt;</span>
+                                    <span>/li</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div class="ms-3">
+                                    <span>&lt;</span>
+                                    <span>li</span>
+                                    <span class="_props">&#160;class</span>
+                                    <span class="_value">="badge badge-pill bg-info"</span>
+                                    <span>&gt;</span>
+                                    <span class="_props">MEH,</span>
+                                    <span>&lt;</span>
+                                    <span>/li</span>
+                                    <span>&gt;</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="result">
+                            <span class="badge badge-pill bg-info">UNO,</span>
+                            <span class="badge badge-pill bg-warning">DUE,</span>
+                            <span class="badge badge-pill bg-info">TRE,</span>
+                            <span class="badge badge-pill bg-warning">BEH,</span>
+                            <span class="badge badge-pill bg-info">MEH,</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ATTRIBUTE - T-ATTF-MAPPING -->
+        <div class="mt-5">
+            <h2>
+                <span>Attribute:</span>
+                <span class="badge badge-pill badge-primary">t-att=mapping</span>
+            </h2>
+            <p>if the parameter is a mapping, each (key, value) pair generates a new attribute and its value:</p>
+            <div class="_print-example d-flex">
+                <div class="box-code">
+                    <span>&lt;</span>
+                    <span>div</span>
+                    <span class="_props">&#160;t-att</span>
+                    <span class="_value">="{'a': 1, 'b': 2}</span>
+                    <span>/</span>
+                    <span>&gt;</span>
+                </div>
+                <div class="rendered-as"/>
+                <div class="box-code">
+                    <span>&lt;</span>
+                    <span>div</span>
+                    <span class="_props">&#160;a</span>
+                    <span class="_value">="1"</span>
+                    <span class="_props">&#160;b</span>
+                    <span class="_value">="2"</span>
+                    <span>/</span>
+                    <span>&gt;</span>
+                </div>
+            </div>
+            <div t-att="{'a': 1, 'b': 2}"/>
+            <div a="1" b="2"/>
+        </div>
+
+        <!-- ATTRIBUTE - T-ATTF-PAIR -->
+        <div class="mt-5">
+            <h2>
+                <span>Attribute:</span>
+                <span class="badge badge-pill badge-primary">t-att=pair</span>
+            </h2>
+            <p>if the parameter is a pair (tuple or array of 2 element), the first item of the pair is the name of the attribute and the second item is the value:</p>
+            <div class="_print-example d-flex">
+                <div class="box-code">
+                    <span>&lt;</span>
+                    <span>div</span>
+                    <span class="_props">&#160;t-att</span>
+                    <span class="_value">="['a', 'b']"</span>
+                    <span>/</span>
+                    <span>&gt;</span>
+                </div>
+                <div class="rendered-as"/>
+                <div class="box-code">
+                    <span>&lt;</span>
+                    <span>div</span>
+                    <span class="_props">&#160;a</span>
+                    <span class="_value">="b"</span>
+                    <span>/</span>
+                    <span>&gt;</span>
+                </div>
+            </div>
+            <div t-att="['a', 'b']"/>
+            <div a="b"/>
+        </div>
+
+        <!-- SETTING VARIABLES -->
+        <div class="mt-5">
+            <h2>
+                <span>Setting Variables</span>
+            </h2>
+            <p>
+                QWeb allows creating variables from within the template, to memoize a computation (to use it multiple times), give a piece of data a clearer name, …
+                This is done via the set directive, which takes the name of the variable to create. The value to set can be provided in two ways:
+                if there is no t-value attribute, the node’s body is rendered and set as the variable’s value
+            </p>
+            <table class="table table-bordered table-hover table-striped align-middle">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Rendered</th>
+                        <th scope="col">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="code">
+                            <div class="box-code">
+                                <div>
+                                    <span>&lt;</span>
+                                    <span>t</span>
+                                    <span class="_props">&#160;t-set</span>
+                                    <span class="_value">="foo"</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div class="ms-3">
+                                    <span>&lt;</span>
+                                    <span>div</span>
+                                    <span>&gt;</span>
+                                    <span class="_props">&#160;Hello World</span>
+                                    <span>&lt;</span>
+                                    <span>/</span>
+                                    <span>div</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div>
+                                    <span>&lt;</span>
+                                    <span>/</span>
+                                    <span>t</span>
+                                    <span>&gt;</span>
+                                </div>
+                                <div>
+                                    <span>&lt;</span>
+                                    <span>t</span>
+                                    <span>&gt;</span>
+                                    <span class="_props">&#160;t-out</span>
+                                    <span class="_value">="foo"</span>
+                                    <span>&lt;/</span>
+                                    <span>&gt;</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="rendered">
+                            <div class="box-code">
+                                <span>&lt;</span>
+                                <span>div</span>
+                                <span>&gt;</span>
+                                <span class="_props">&#160;Hello World</span>
+                                <span>&lt;</span>
+                                <span>/</span>
+                                <span>div</span>
+                                <span>&gt;</span>
+                            </div>
+                        </td>
+                        <td class="result">
+                            <t t-set="foo">
+                                <div>Hello World</div>
+                            </t>
+                            <t t-out="foo"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</t>

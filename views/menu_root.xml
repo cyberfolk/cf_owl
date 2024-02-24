@@ -1,0 +1,7 @@
+<odoo>
+    <menuitem
+            sequence="0"
+            id="menu_root"
+            name="AF | Owl"
+            web_icon="cf_owl,static/description/icon.png"/>
+</odoo>

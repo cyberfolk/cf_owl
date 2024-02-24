@@ -1,0 +1,19 @@
+<odoo>
+    <!-- AZIONE VISTA - Loops -->
+    <record id="action_menu_loop" model="ir.actions.client">
+        <field name="name">Loops</field>
+        <field name="tag">loops_view</field>
+    </record>
+
+    <!-- AZIONE VISTA - ATTRIBUTES -->
+    <record id="action_menu_attributes" model="ir.actions.client">
+        <field name="name">Attributes</field>
+        <field name="tag">attributes_view</field>
+    </record>
+
+    <!-- MENU - QWEB -->
+    <menuitem sequence="0" id="menu_qweb" name="QWeb" parent="menu_root">
+        <menuitem sequence="0" id="menu_loop" name="Loops" action="action_menu_loop"/>
+        <menuitem sequence="1" id="menu_attributes" name="attributes" action="action_menu_attributes"/>
+    </menuitem>
+</odoo>
