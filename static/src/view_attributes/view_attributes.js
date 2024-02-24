@@ -1,4 +1,4 @@
-odoo.define("af_owl.LoopsView", function (require) {
+odoo.define("cf_owl.ViewAttributes", function (require) {
 
     var AbstractAction = require('web.AbstractAction');
     var core = require('web.core');
@@ -9,8 +9,8 @@ odoo.define("af_owl.LoopsView", function (require) {
     var _t = core._t;
     var rpc = require('web.rpc');
 
-    var LoopsView = AbstractAction.extend({
-        contentTemplate: 'LoopsView',
+    var ViewAttributes = AbstractAction.extend({
+        contentTemplate: 'ViewAttributes',
 
         events: {
         },
@@ -30,6 +30,6 @@ odoo.define("af_owl.LoopsView", function (require) {
         }
     });
 
-   core.action_registry.add('loops_view', LoopsView);
-   return LoopsView;
+   core.action_registry.add('view_attributes', ViewAttributes);
+   return ViewAttributes;
 });

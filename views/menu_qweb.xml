@@ -2,13 +2,13 @@
     <!-- AZIONE VISTA - Loops -->
     <record id="action_menu_loop" model="ir.actions.client">
         <field name="name">Loops</field>
-        <field name="tag">loops_view</field>
+        <field name="tag">view_loops</field>
     </record>
 
     <!-- AZIONE VISTA - ATTRIBUTES -->
     <record id="action_menu_attributes" model="ir.actions.client">
         <field name="name">Attributes</field>
-        <field name="tag">attributes_view</field>
+        <field name="tag">view_attributes</field>
     </record>
 
     <!-- MENU - QWEB -->

@@ -23,7 +23,9 @@
 
     'assets': {
         'web.assets_backend': [
-            'cf_owl/static/src/menu_qweb/*',
+            'cf_owl/static/src/scss/style.scss',
+            'cf_owl/static/src/view_attributes/*',
+            'cf_owl/static/src/view_loops/*',
         ],
     },
 
