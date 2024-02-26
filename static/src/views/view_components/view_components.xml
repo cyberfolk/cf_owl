@@ -1,0 +1,12 @@
+<t t-name="ViewComponents">
+    <div id="body">
+        <div class="container">
+
+            <h1 class="mt-3">Components</h1>
+            <div>
+                <!-- Componente OWL inserito nella vista QWeb -->
+                <HelloWorld/> <!-- INFO-: Non riesco ad attivarlo -->
+            </div>
+        </div>
+    </div>
+</t>

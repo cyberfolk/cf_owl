@@ -11,9 +11,16 @@
         <field name="tag">view_attributes</field>
     </record>
 
+    <!-- AZIONE VISTA - COMPONENTS -->
+    <record id="action_menu_components" model="ir.actions.client">
+        <field name="name">Components</field>
+        <field name="tag">view_components</field>
+    </record>
+
     <!-- MENU - QWEB -->
     <menuitem sequence="0" id="menu_qweb" name="QWeb" parent="menu_root">
         <menuitem sequence="0" id="menu_loop" name="Loops" action="action_menu_loop"/>
-        <menuitem sequence="1" id="menu_attributes" name="attributes" action="action_menu_attributes"/>
+        <menuitem sequence="1" id="menu_attributes" name="Attributes" action="action_menu_attributes"/>
+        <menuitem sequence="2" id="menu_components" name="Components" action="action_menu_components"/>
     </menuitem>
 </odoo>
