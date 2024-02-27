@@ -1,3 +1,14 @@
+/** Per fixare un problema nella action.client*/
+html .o_web_client {
+    overflow: auto !important;
+}
+.o_action_manager {
+    overflow: auto !important;
+}
+html .o_web_client > .o_action_manager{
+    overflow: auto !important;
+}
+
 ._props  {
   @extend .text-secondary;
 }

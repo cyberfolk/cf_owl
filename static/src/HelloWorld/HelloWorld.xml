@@ -2,7 +2,7 @@
   <t t-name="HelloWorld">
     <div>
       Ciao, <t t-esc="state.name"/>!
-      <input t-on-input="updateName($event.target.value)" placeholder="Inserisci il tuo nome"/>
+<!--      <input t-on-input="updateName($event.target.value)" placeholder="Inserisci il tuo nome"/>-->
     </div>
   </t>
 </templates>

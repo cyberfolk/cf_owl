@@ -1,10 +1,10 @@
 /** @odoo-module **/
-var AbstractAction = require('web.AbstractAction');
-var core = require('web.core');
+import { registry } from "@web/core/registry";
+import { Component } from  "@odoo/owl";
+const actionRegistry = registry.category("actions");
 
-var ViewAttributes = AbstractAction.extend({
-    contentTemplate: 'ViewAttributes',
-});
+class ViewAttributes extends Component {
+    static template = "ViewAttributes"
+}
 
-core.action_registry.add('view_attributes', ViewAttributes);
-return ViewAttributes;
+actionRegistry.add('view_attributes', ViewAttributes);
