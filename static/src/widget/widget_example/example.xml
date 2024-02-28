@@ -2,13 +2,10 @@
 <templates id="template" xml:space="preserve">
 
     <t t-name="example_template" owl="1">
-        <t t-if="props.readonly">
-            <pre t-esc="props.value" t-attf-class="bg-#{props.bgColor} text-white p-3 rounded"/>
-            <div class="badge text-bg-warning">Questo campo è settato readonly</div>
-        </t>
-        <t t-else="">
-            <textarea t-att-value="props.value" t-attf-class="bg-#{props.bgColor} text-white p-3 rounded"/>
-            <div class="badge text-bg-success">Questo campo NON è settato readonly</div>
-        </t>
+        <div class="badge text-bg-warning" t-if="props.readonly" >Questo campo è settato readonly</div>
+        <div class="badge text-bg-success" t-else="" >Questo campo NON è settato readonly</div>
+        <div class="mt-2 fw-bold" t-if="props.bgColor == 'primary'">Il colore di sfondo è quello di default</div>
+        <div class="mt-2 fw-bold" t-else="">Il colore di sfondo è stato passato tramite props</div>
+        <textarea class="mt-2" t-att-value="state.value" t-attf-class="bg-#{props.bgColor} text-white p-1 rounded"/>
     </t>
 </templates>

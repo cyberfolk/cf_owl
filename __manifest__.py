@@ -28,6 +28,7 @@
             'cf_owl/static/src/views/view_attributes/*',
             'cf_owl/static/src/views/view_loops/*',
             'cf_owl/static/src/views/view_components/*',
+            'cf_owl/static/src/widget/widget_example/*',
         ],
     },
 
