@@ -3,6 +3,10 @@
     <div>
       Ciao, <t t-esc="state.name"/>!
 <!--      <input t-on-input="updateName($event.target.value)" placeholder="Inserisci il tuo nome"/>-->
+      <p>Counter: <t t-esc="state.value"/></p>
+      <button class="btn btn-primary" t-on-click="increment">Increment</button>
+
+      <button class="btn mt-4" t-attf-class="{{ (state.is_primary) ? 'btn-primary' : 'btn-secondary' }}" t-on-click="toggle_is_primary">Toggle</button>
     </div>
   </t>
 </templates>
