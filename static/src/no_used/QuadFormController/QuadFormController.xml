@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="QuadFormView" t-inherit="web.FormView">
+        <xpath expr="//Layout" position="before">
+            <h3>expr="//Layout" position="before"</h3>
+        </xpath>
+        <xpath expr="//Layout" position="inside">
+            <h3>expr="//Layout" position="inside"</h3>
+        </xpath>
+        <xpath expr="//Layout" position="after">
+            <h3>expr="//Layout" position="after"</h3>
+        </xpath>
+        <xpath expr="//Layout/t[@t-component='props.Renderer']" position="before">
+            <h3>expr="//Layout/t[@t-component='props.Renderer']" position="before"</h3>
+        </xpath>
+<!--        <xpath expr="//Layout/t[@t-component='props.Renderer']" position="inside">-->
+<!--            <h3>expr="//Layout/t[@t-component='props.Renderer']" position="inside"</h3>-->
+<!--        </xpath>-->
+        <xpath expr="//Layout/t[@t-component='props.Renderer']" position="after">
+            <h3>expr="//Layout/t[@t-component='props.Renderer']" position="after"</h3>
+        </xpath>
+        <xpath expr="//Layout/t[@t-set-slot='layout-actions']" position="before">
+            <h3>expr="//Layout/t[@t-set-slot='layout-actions']" position="before"</h3>
+        </xpath>
+        <xpath expr="//Layout/t[@t-set-slot='layout-actions']" position="inside">
+            <h3>expr="//Layout/t[@t-set-slot='layout-actions']" position="inside"</h3>
+        </xpath>
+        <xpath expr="//Layout/t[@t-set-slot='layout-actions']" position="after">
+            <h3>expr="//Layout/t[@t-set-slot='layout-actions']" position="after"</h3>
+        </xpath>
+        <xpath expr="//Layout/t[@t-set-slot='control-panel-additional-actions']" position="before">
+            <h3>expr="//Layout/t[@t-set-slot='control-panel-additional-actions']" position="before</h3>
+        </xpath>
+        <xpath expr="//Layout/t[@t-set-slot='control-panel-additional-actions']" position="inside">
+            <h3>expr="//Layout/t[@t-set-slot='control-panel-additional-actions']" position="inside</h3>
+        </xpath>
+        <xpath expr="//Layout/t[@t-set-slot='control-panel-additional-actions']" position="after">
+            <h3>expr="//Layout/t[@t-set-slot='control-panel-additional-actions']" position="after</h3>
+        </xpath>
+   </t>
+</templates>

@@ -23,11 +23,9 @@
 
     'assets': {
         'web.assets_backend': [
-            'cf_owl/static/src/HelloWorld/*',
+            'cf_owl/static/src/components/*/*',
             'cf_owl/static/src/scss/style.scss',
-            'cf_owl/static/src/views/view_attributes/*',
-            'cf_owl/static/src/views/view_loops/*',
-            'cf_owl/static/src/views/view_components/*',
+            'cf_owl/static/src/page_views/*/*',
             'cf_owl/static/src/widget/widget_example/*',
         ],
     },
