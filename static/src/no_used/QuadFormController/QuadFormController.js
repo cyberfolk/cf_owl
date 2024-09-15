@@ -1,5 +1,5 @@
 /** @odoo-module */
-//import {HelloWorld} from '@cf_owl/HelloWorld/HelloWorld';
+//import {ParentComponent} from '@cf_owl/ParentComponent/ParentComponent';
 import { FormController } from "@web/views/form/form_controller";
 import { formView } from "@web/views/form/form_view";
 import { registry } from "@web/core/registry";
@@ -7,7 +7,7 @@ import { useService } from "@web/core/utils/hooks";
 import { Component, onWillStart } from "@odoo/owl";
 
 class QuadFormController extends FormController {
-    // static components = { QuadFormController, HelloWorld }; // TODO-: Da errore qui.
+    // static components = { QuadFormController, ParentComponent }; // TODO-: Da errore qui.
 
     setup() {
         super.setup();

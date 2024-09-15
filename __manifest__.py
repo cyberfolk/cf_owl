@@ -23,6 +23,7 @@
 
     'assets': {
         'web.assets_backend': [
+            'cf_owl/static/src/utility/mousePosition.js',
             'cf_owl/static/src/store.js',
             'cf_owl/static/src/components/*/*',
             'cf_owl/static/src/scss/style.scss',
