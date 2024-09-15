@@ -6,6 +6,7 @@ const actionRegistry = registry.category("actions");
 
 class ViewComponents extends Component {
     static template = "ViewComponents"
+    static props = ['action', 'actionId', 'className']   // Riga opzionale messa solo per togliere il warning in console.
     static components = { ParentComponent };
 }
 

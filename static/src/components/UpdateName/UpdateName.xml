@@ -15,9 +15,10 @@
                     </div>
                     <input type="text" class="form-control bg-light" t-model="state.name.lazy"/>
                 </div>
-                <div class="w-25 h-100 p-2 bg-light rounded">
-                    <i>Ciao</i>
-                    <t t-esc="state.name"/>
+                <div class="w-25 h-100 p-2 bg-light rounded lh-sm" >
+                    <i>Ciao
+                        <t t-esc="state.name"/>
+                    </i>
                 </div>
             </div>
         </div>

@@ -12,6 +12,7 @@ let giovanni = {giovanni: {nome: 'Giovanni', cognome: 'Neri', eta: 30}}
 
 export class ParentComponent extends Component {
     static template = 'ParentComponent';
+    static props = ["*"]
     static components = { CounterClick, MousePosition, ToggleButton, UpdateName };
 
     setup() {

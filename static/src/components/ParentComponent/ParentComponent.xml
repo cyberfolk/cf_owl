@@ -12,9 +12,9 @@
 
             <MousePosition/>
 
-            <ToggleButton/>
+            <ToggleButton active="true"/>
 
-            <UpdateName/>
+            <UpdateName name="'Red'"/>
 
         </div>
     </t>
