@@ -1,0 +1,25 @@
+<templates>
+    <t t-name="UpdateName">
+        <div class="p-3 m-3 bg-warning rounded">
+            <h2>UpdateName</h2>
+            <div class="row g-3">
+                <div class="input-group mb-3 w-25">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Name</span>
+                    </div>
+                    <input type="text" class="form-control bg-light" t-model="state.name"/>
+                </div>
+                <div class="input-group mb-3 w-25">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Name Lazy</span>
+                    </div>
+                    <input type="text" class="form-control bg-light" t-model="state.name.lazy"/>
+                </div>
+                <div class="w-25 h-100 p-2 bg-light rounded">
+                    <i>Ciao</i>
+                    <t t-esc="state.name"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

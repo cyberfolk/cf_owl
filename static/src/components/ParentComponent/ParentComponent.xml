@@ -1,32 +1,21 @@
 <templates>
     <t t-name="ParentComponent">
-        <div>
-            <div>
-                <span>Ciao Mario,</span>
-                <t t-esc="store.cognome"/>
-                <!--                <t t-esc="state.name"/>!-->
-                <!--      <input t-on-input="updateName($event.target.value)" placeholder="Inserisci il tuo nome"/>-->
-                <p>Counter:
-                    <t t-esc="state.value"/>
-                </p>
+        <div class="p-3 rounded bg-info">
+            <h1>ParentComponent</h1>
+
+            <div class="h-100">
+                <h2>Oggetti salvati nello Store:</h2>
+                <textarea class="form-control bg-light" rows="10" t-esc="jsonStore"/>,
             </div>
-            <div>
-                <button class="btn btn-primary" t-on-click="increment">Increment</button>
-                <button class="btn" t-attf-class="{{ (state.is_primary) ? 'btn-primary' : 'btn-secondary' }}" t-on-click="toggle_is_primary">Toggle</button>
-            </div>
-            <div>
-                <div>
-                    <b>jsonStore:</b>
-                    <t t-esc="jsonStore"/>,
-                </div>
-            </div>
-            <div>
-                <div>
-                    <b>Mouse:</b>
-                    <t t-esc="mouse.x"/>,
-                    <t t-esc="mouse.y"/>
-                </div>
-            </div>
+
+            <CounterClick/>
+
+            <MousePosition/>
+
+            <ToggleButton/>
+
+            <UpdateName/>
+
         </div>
     </t>
 </templates>

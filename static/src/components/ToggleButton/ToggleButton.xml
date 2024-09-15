@@ -1,0 +1,10 @@
+<templates>
+    <t t-name="ToggleButton">
+        <div class="p-3 m-3 bg-warning rounded">
+            <h2>ToggleButton</h2>
+            <div>
+                <button class="btn" t-attf-class="{{ (state.is_primary) ? 'btn-primary' : 'btn-secondary' }}" t-on-click="toggle_is_primary">Toggle</button>
+            </div>
+        </div>
+    </t>
+</templates>

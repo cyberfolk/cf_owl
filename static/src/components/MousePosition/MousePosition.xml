@@ -1,0 +1,19 @@
+<templates>
+    <t t-name="MousePosition">
+        <div class="p-3 m-3 bg-warning rounded">
+            <h2>MousePosition</h2>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <b>X</b>
+                </div>
+                <div class="input-group-text bg-light text-end"
+                     style="width: 50px" t-esc="mouse.x"/>
+                <div class="input-group-text">
+                    <b>Y</b>
+                </div>
+                <div class="input-group-text bg-light text-end"
+                     style="width: 50px" t-esc="mouse.y"/>
+            </div>
+        </div>
+    </t>
+</templates>

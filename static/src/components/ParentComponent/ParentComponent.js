@@ -1,39 +1,24 @@
 /** @odoo-module **/
 
+import { UpdateName } from '@cf_owl/components/UpdateName/UpdateName';
+import { ToggleButton } from '@cf_owl/components/ToggleButton/ToggleButton';
+import { CounterClick } from '@cf_owl/components/CounterClick/CounterClick';
+import { MousePosition } from '@cf_owl/components/MousePosition/MousePosition';
 import { Component, useState, onWillDestroy } from '@odoo/owl';
 import { store, useStore } from "../../store";
-import { mousePosition } from "../../utility/mousePosition";
 
 let cognome = {cognome: 'Rosssi'};
 let giovanni = {giovanni: {nome: 'Giovanni', cognome: 'Neri', eta: 30}}
 
 export class ParentComponent extends Component {
     static template = 'ParentComponent';
+    static components = { CounterClick, MousePosition, ToggleButton, UpdateName };
+
     setup() {
         super.setup();
-        this.mouse = mousePosition();
         this.store = useStore()
-        this.state = useState({
-            name: "Mondo",
-            value: 0,
-            is_primary: true
-        });
         store.add(cognome);
         store.add(giovanni);
-        this.jsonStore = JSON.stringify(this.store);
-    }
-
-    updateName(newName) {
-        this.state.name = newName;
-    }
-
-    increment() {
-        this.state.value++;
-    }
-
-    toggle_is_primary() {
-        this.state.is_primary = this.state.is_primary ? false : true;
+        this.jsonStore = JSON.stringify(this.store, null, 4);
     }
 }
-
-ParentComponent.components = { ParentComponent };
