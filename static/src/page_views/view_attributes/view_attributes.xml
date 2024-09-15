@@ -13,7 +13,8 @@
                         <span class="badge badge-pill badge-primary">t-out >> t-esc</span>
                     </h2>
                     <p>
-                        <strong>t-out</strong> e
+                        <strong>t-out</strong>
+                        e
                         e <strong>t-esc</strong> sono modi per visualizzare
                         variabili e template. Ma tra i due è preferibile usare <strong>t-out</strong>.
                     </p>
@@ -207,7 +208,7 @@
                                     </div>
                                 </td>
                                 <td class="result">
-                                    <t t-foreach="list" t-as="i" t-key="i">
+                                    <t t-foreach="list" t-as="i" t-key="i_index">
                                         <span t-out="i" t-attf-class="badge badge-pill {{ (i_index % 2 === 0) ? 'bg-info' : 'bg-warning' }}"/>
                                     </t>
                                     <div>Syntaxes for format strings: {{code}} (aka jinja-style)</div>
@@ -248,7 +249,7 @@
                                     </div>
                                 </td>
                                 <td class="result">
-                                    <t t-foreach="list" t-as="i" t-key="i">
+                                    <t t-foreach="list" t-as="i" t-key="i_index">
                                         <span t-out="i" t-attf-class="badge badge-pill #{ (i_index % 2 === 0) ? 'bg-info' : 'bg-warning' }"/>
                                     </t>
                                     <div>Syntaxes for format strings: {{code}} (aka ruby-style)</div>
@@ -292,7 +293,7 @@
                                     </div>
                                 </td>
                                 <td class="result">
-                                    <t t-foreach="list" t-as="i" t-key="i">
+                                    <t t-foreach="list" t-as="i" t-key="i_index">
                                         <span t-out="i" t-att-class="'badge badge-pill ' + ((i_index % 2 === 0) ? 'bg-info' : 'bg-warning')"/>
                                     </t>
                                     <div>Per applicare una classe tramite "T-ATT-", non possoutilizzare delle stringhe ma devo usare delle variabili che ritornano delle stringhe</div>

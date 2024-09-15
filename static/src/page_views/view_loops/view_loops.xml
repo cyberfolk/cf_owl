@@ -28,7 +28,7 @@
                     <thead class="thead-light">
                         <tr>
                             <th>#</th>
-                            <th t-foreach="list" t-as="i" t-key="i" t-out="i_index + 's'"/>
+                            <th t-foreach="list" t-as="i" t-key="i_index" t-out="i_index + 's'"/>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,22 +37,22 @@
                                 <div>t-out="i"</div>
                                 <div>t-out="i_value</div>
                             </th>
-                            <td t-foreach="list" t-as="i" t-key="i" style="vertical-align: middle;">
+                            <td t-foreach="list" t-as="i" t-key="i_index" style="vertical-align: middle;">
                                 <div t-out="i"/>
                             </td>
                         </tr>
                         <tr>
                             <th>t-out="i_index"</th>
-                            <td t-foreach="list" t-as="i" t-key="i" t-out="i_index"/>
+                            <td t-foreach="list" t-as="i" t-key="i_index" t-out="i_index"/>
                         </tr>
                         <tr>
                             <th>t-out="i_first"</th>
-                            <td t-foreach="list" t-as="i" t-key="i" t-out="i_first" t-att-style="i_first ? 'background-color: #00FF00' : ''"/>
+                            <td t-foreach="list" t-as="i" t-key="i_index" t-out="i_first" t-att-style="i_first ? 'background-color: #00FF00' : ''"/>
                         </tr>
                         <tr>
                             <th>t-out="i_last"</th>
                             <t t-set="condition" t-value="True"/>
-                            <td t-foreach="list" t-as="i" t-key="i" t-out="i_last" t-att-style="i_last ? 'background-color: #00FF00' : ''"/>
+                            <td t-foreach="list" t-as="i" t-key="i_index" t-out="i_last" t-att-style="i_last ? 'background-color: #00FF00' : ''"/>
                         </tr>
                     </tbody>
                 </table>
